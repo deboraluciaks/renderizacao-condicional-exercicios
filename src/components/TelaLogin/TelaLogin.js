@@ -4,6 +4,7 @@ function TelaLogin(props) {
   const login = () => {
     // fluxo de login (ainda veremos)
     props.mudarTela("TelaPrincipal")
+    console.log(props.login)
   }
 
   const mostrarTelaCadastro = () => {
@@ -16,14 +17,14 @@ function TelaLogin(props) {
 
       <Form>
         <StyledLabel>E-mail:
-          <Input />
+          <Input value={props.login.email} onChange={props.changeEmail}/>
         </StyledLabel>
 
         <StyledLabel>Senha:
-          <Input type={"password"} />
+          <Input type={"password"} value={props.login.senha} onChange={props.changeSenha}/>
         </StyledLabel>
 
-        <SendButton onClick={login}>Entrar</SendButton>
+        <SendButton type="submit" onClick={login}>Entrar</SendButton>
 
         <RegisterButton onClick={mostrarTelaCadastro}>Cadastre-se</RegisterButton>
       </Form>
