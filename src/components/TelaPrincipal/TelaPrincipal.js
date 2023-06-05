@@ -5,6 +5,8 @@ function TelaPrincipal(props) {
     props.mudarTela("TelaLogin")
   }
 
+  
+
   return (
       <Div>
           <Titulo>Tela Principal</Titulo>
